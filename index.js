@@ -1,3 +1,6 @@
+/**
+ * Taken from https://github.com/apollographql/apollo-server
+ */
 const express = require('express');
 const { ApolloServer, gql } = require('apollo-server-express');
 
