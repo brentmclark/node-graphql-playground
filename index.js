@@ -4,6 +4,7 @@
 const express = require('express');
 const { ApolloServer, gql } = require('apollo-server-express');
 require('isomorphic-fetch')
+const { CharacterTypeDef } = require('./schema/Character')
 
 async function getCharacter (id) {
     const response = await fetch(`https://swapi.co/api/people/${id}`)
@@ -18,24 +19,7 @@ const typeDefs = gql`
     character(id: Int!): Character
   }
 
-  type Character {
-    name: String
-    height: Int
-    mass: Int
-    hair_color: String
-    skin_color: String,
-    eye_color: String,
-    birth_year: String,
-    gender: String,
-    homeworld: String,
-    films: [String]
-    species: [String]
-    vehicles: [String]
-    starships: [String]
-    created: String
-    edited: String
-    url: String
-  }
+  ${CharacterTypeDef}
 `;
 
 // Provide resolver functions for your schema fields
