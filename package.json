@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "server": "node server/index.js"
   },
   "repository": {
     "type": "git",
@@ -22,9 +25,15 @@
   },
   "homepage": "https://github.com/brentmclark/node-graphql-playground#readme",
   "dependencies": {
+    "apollo-boost": "^0.1.23",
     "apollo-server-express": "^2.3.1",
     "express": "^4.16.4",
     "graphql": "^14.0.2",
-    "isomorphic-fetch": "^2.2.1"
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "^7.0.2",
+    "react": "^16.7.0",
+    "react-apollo": "^2.3.3",
+    "react-dom": "^16.7.0",
+    "styled-components": "^4.1.3"
   }
 }

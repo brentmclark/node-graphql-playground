@@ -3,7 +3,7 @@
  */
 const express = require('express');
 const { ApolloServer, gql } = require('apollo-server-express');
-require('isomorphic-fetch')
+require('isomorphic-unfetch')
 const { CharacterTypeDef } = require('./schema/Character')
 
 async function getCharacter (id) {
