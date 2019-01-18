@@ -10,7 +10,11 @@ const starWarsCharactersQuery = gql`
             gender
             height
             hair_color
-            films
+            films {
+                title
+                episode_id
+                opening_crawl
+            }
         }
     }
 `
@@ -18,7 +22,6 @@ const starWarsCharactersQuery = gql`
 const queryVariables = {
     id: 1
 }
-
 
 function StarWars(props) {
     return (
@@ -49,7 +52,12 @@ function StarWars(props) {
                     <div><strong>Hair Color:</strong>{character.hair_color}</div>
                     <br/>
                     <strong>Films:</strong>
-                    {character.films.map(film => <div key={film}>{film}</div>)}
+                    {character.films.map(film => (
+                        <div key={film.title}>
+                            <div><h3>{film.title} (episode: {film.episode_id})</h3></div>
+                            <div><em>{film.opening_crawl}</em></div>
+                        </div>
+                    ))}
                 </>
             )
         }}

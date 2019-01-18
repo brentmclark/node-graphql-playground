@@ -11,7 +11,7 @@ type Character {
     birth_year: String
     gender: String
     homeworld: String
-    films: [String]
+    films: [Film]
     species: [String]
     vehicles: [String]
     starships: [String]
