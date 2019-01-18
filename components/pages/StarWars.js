@@ -38,14 +38,17 @@ function StarWars(props) {
                         }
                     >
                         <label>Character Id</label>
-                        <input type="text" defaultValue={variables.id} />
+                        <input type="number" defaultValue={variables.id} />
                         <button type="submit">See Character</button>
                     </form>
-                    <br />
-                    <div>{character.name}</div>
-                    <div>{character.gender}</div>
-                    <div>{character.height}</div>
-                    <div>{character.hair_color}</div>
+                    <br/>
+                    <h1>Character</h1>
+                    <div><strong>Name:</strong>{character.name}</div>
+                    <div><strong>Gender:</strong>{character.gender}</div>
+                    <div><strong>Height:</strong>{character.height} cm</div>
+                    <div><strong>Hair Color:</strong>{character.hair_color}</div>
+                    <br/>
+                    <strong>Films:</strong>
                     {character.films.map(film => <div key={film}>{film}</div>)}
                 </>
             )
