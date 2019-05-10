@@ -8,7 +8,7 @@ Before you do anything else, run `npm i`
 ### Getting Started
 1. `npm run server`
 1. Open your browser to http://localhost:4000/graphql
-1. make a query against the scema.  This one should work:
+1. make a query against the schema.  This one should work:
 ```
 query starWarsCharacter {
   character(id: 1) {
