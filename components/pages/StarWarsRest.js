@@ -4,19 +4,14 @@ import gql from 'graphql-tag'
 import ErrorMessage from '../ErrorMessage'
 
 const starWarsCharactersQuery = gql`
-    query starWarsCharacter($id: Int!) {
-        character(id: $id) {
-            name
-            gender
-            height
-            hair_color
-            films {
-                title
-                episode_id
-                opening_crawl
-            }
-        }
-    }
+query luke {
+  character @rest(type: "Character", path: "people/1/") {
+    name
+    gender
+    height
+    hair_color
+  }
+}
 `
 
 const queryVariables = {
@@ -49,14 +44,6 @@ function StarWars(props) {
                     <div><strong>Gender:</strong>{character.gender}</div>
                     <div><strong>Height:</strong>{character.height} cm</div>
                     <div><strong>Hair Color:</strong>{character.hair_color}</div>
-                    <br/>
-                    <strong>Films:</strong>
-                    {character.films.map(film => (
-                        <div key={film.title}>
-                            <div><h3>{film.title} (episode: {film.episode_id})</h3></div>
-                            <div><em>{film.opening_crawl}</em></div>
-                        </div>
-                    ))}
                 </>
             )
         }}
